@@ -30,7 +30,6 @@ class TransactionController extends Controller
         $rules = [
             'product_id'=>'required|integer',
             'user_id'=>'required|integer'
-            // 'status'=>'required|in:process,on the way,done'
         ];
 
         $data = $request->all();
@@ -68,8 +67,6 @@ class TransactionController extends Controller
             'user'=>$user['data'],
             'product'=>$product->toArray()
         ]);
-
-        echo print_r($order);
         if($order['status'] === 'error'){
             return response()->json([
                 'status'=>$order['status'],
@@ -89,7 +86,7 @@ class TransactionController extends Controller
 
         return response()->json([
             'status'=>'success',
-            'data'=>$data
+            'data'=>$transaction
         ]);
     }
 }

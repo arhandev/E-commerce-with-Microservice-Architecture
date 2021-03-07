@@ -1,4 +1,5 @@
 <?php
+use Illuminate\Support\Facades\Http;
 
 function getUser($userId){
     $url = env('URL_USERS_SERVICE').'users/'.$userId;
@@ -47,7 +48,6 @@ function getUserByIds($userIds = []){
 
 function postOrder($params){
     $url = env('URL_ORDER_PAYMENT_SERVICE').'api/orders';
-    
     try {
         $response = Http::post($url, $params);
         $data = $response->json();

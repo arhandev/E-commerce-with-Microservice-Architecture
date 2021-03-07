@@ -25,7 +25,6 @@ class OrderController extends Controller
     public function create(Request $request){
         $user = $request->input('user');
         $product = $request->input('product');
-
         $order = Order::create([
             'user_id' => $user['id'],
             'product_id' => $product['id'],
@@ -55,11 +54,10 @@ class OrderController extends Controller
         $midtransParams = [
             'transaction_details'=>$transactionDetails,
             'item_details'=>$itemDetails,
-            'customer_details'=>[]
+            'customer_details'=>$customerDetails
         ];
 
         $midtransSnapUrl = $this->getMidtransSnapURL($midtransParams);
-
 
         $order->snap_url=$midtransSnapUrl;
         
@@ -67,8 +65,7 @@ class OrderController extends Controller
             'product_id' => $product['id'],
             'product_price' => $product['price'],
             'product_name' => $product['name'],
-            'product_thumbnail' => $product['thumbnail'],
-            'product_owner' => $product['owner'],
+            'product_thumbnail' => $product['thumbnail']
         ];
 
         $order->save();
