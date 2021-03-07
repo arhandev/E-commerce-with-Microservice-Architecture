@@ -24,7 +24,7 @@ module.exports = {
        },
        role: {
          type: Sequelize.ENUM,
-         values: ['admin', 'student'],
+         values: ['admin', 'customer'],
          allowNull: false
        },
        email: {

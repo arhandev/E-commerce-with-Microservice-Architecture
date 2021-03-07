@@ -18,7 +18,7 @@ const reviewsRouter = require('./routes/reviews');
 const webhookRouter = require('./routes/webhook');
 
 const verifyToken = require('./middlewares/verifyToken');
-
+const permission = require('./middlewares/permission')
 
 const app = express();
 
@@ -30,14 +30,14 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
-app.use("/orders", verifyToken, orderPaymentsRouter);
-app.use("/media", mediaRouter);
+app.use("/orders", verifyToken, permission('admin', 'customer'), orderPaymentsRouter);
+app.use("/media",verifyToken, permission('admin', 'customer'), mediaRouter);
 app.use("/products", productsRouter);
-app.use("/image-products", verifyToken, imageProductsRouter);
+app.use("/image-products", verifyToken, permission('admin'), imageProductsRouter);
 app.use('/refresh-tokens', refreshTokensRouter);
-app.use('/owners', verifyToken, ownersRouter);
-app.use('/transactions', verifyToken, transactionsRouter);
-app.use('/reviews', verifyToken, reviewsRouter);
+app.use('/owners', verifyToken, permission('admin'), ownersRouter);
+app.use('/transactions', verifyToken, permission('admin', 'customer'), transactionsRouter);
+app.use('/reviews', verifyToken, permission('admin', 'customer'), reviewsRouter);
 app.use('/webhook', webhookRouter);
 
 
