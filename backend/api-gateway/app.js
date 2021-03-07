@@ -14,6 +14,8 @@ const paymentsRouter = require("./routes/payments");
 const refreshTokensRouter = require('./routes/refreshTokens');
 const ownersRouter = require('./routes/owners');
 const imageProductsRouter = require('./routes/imageProducts');
+const transactionsRouter = require('./routes/transactions');
+const reviewsRouter = require('./routes/reviews');
 
 const verifyToken = require('./middlewares/verifyToken');
 
@@ -35,6 +37,8 @@ app.use("/payments", paymentsRouter);
 app.use("/image-products", verifyToken, imageProductsRouter);
 app.use('/refresh-tokens', refreshTokensRouter);
 app.use('/owners', verifyToken, ownersRouter);
+app.use('/transactions', verifyToken, transactionsRouter);
+app.use('/reviews', verifyToken, reviewsRouter);
 
 
 module.exports = app;

@@ -42,6 +42,7 @@ Route::delete('image-products/{id}', [ImageProductController::class, 'destroy'])
 // Transaction
 Route::get('transactions', [TransactionController::class, 'index']);
 Route::post('transactions', [TransactionController::class, 'create']);
+Route::post('transactions/success', [TransactionController::class, 'createSuccessTransaction']);
 
 
 // Review

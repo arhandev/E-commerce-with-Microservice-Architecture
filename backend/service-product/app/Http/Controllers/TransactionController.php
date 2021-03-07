@@ -29,8 +29,8 @@ class TransactionController extends Controller
     public function create(Request $request){
         $rules = [
             'product_id'=>'required|integer',
-            'user_id'=>'required|integer',
-            'status'=>'in:status,on the way,done'
+            'user_id'=>'required|integer'
+            // 'status'=>'required|in:process,on the way,done'
         ];
 
         $data = $request->all();
@@ -64,11 +64,32 @@ class TransactionController extends Controller
             ],$user['http_code']);
         }
 
+        $order = postOrder([
+            'user'=>$user['data'],
+            'product'=>$product->toArray()
+        ]);
+
+        echo print_r($order);
+        if($order['status'] === 'error'){
+            return response()->json([
+                'status'=>$order['status'],
+                'message'=>$order['message']
+            ], $order['http_code']);
+        }
+
+        return response()->json([
+            'status'=>$order['status'],
+            'data'=>$order['data']
+        ]);
+    }
+
+    public function createSuccessTransaction(Request $request){
+        $data = $request->all();
         $transaction = Transaction::create($data);
 
         return response()->json([
             'status'=>'success',
-            'data'=>$transaction
+            'data'=>$data
         ]);
     }
 }
