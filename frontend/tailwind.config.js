@@ -15,6 +15,9 @@ module.exports = {
 
                 "3/4": "75%",
             },
+            Width: {
+                "5/6": "85%",
+            },
             minWidth: {
                 0: "0",
 
@@ -60,12 +63,14 @@ module.exports = {
             customsec3: "#FFFFFF",
             customsec4: "#FAFCFF",
             customsec5: "#E5E5E5",
+            customVerticalTimeline: "#D95252",
         }),
         textColor: theme => ({
             ...theme("colors"),
 
             custom1: "#4C84AD",
             custom2: "#373F41",
+            custom3: "#B0B0B0",
         }),
     },
     variants: {

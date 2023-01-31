@@ -135,6 +135,86 @@ function Home() {
                     </div>
                 </div>
             </div>
+            {/* Fourth Section */}
+            <div className="bg-customsec4">
+                <div class="container mx-auto w-full h-full py-16">
+                    <h1 className="text-center text-custom2 text-3xl font-semibold my-10">
+                        Why Us?
+                    </h1>
+                    <div class="relative wrap overflow-hidden p-10 h-full">
+                        <div
+                            class="border-2-2 absolute border-opacity-20 border-gray-700 h-full border"
+                            style={{ left: "50%" }}
+                        ></div>
+                        {/* <!-- right timeline --> */}
+                        <div class="mb-8 flex justify-between items-center w-full right-timeline">
+                            <div class="w-5/12"></div>
+                            <div class="z-20 flex items-center bg-customVerticalTimeline shadow-xl w-8 h-8 rounded-full"></div>
+                            <div class="bg-custom1 rounded-lg shadow-xl w-5/12 px-6 py-4">
+                                <h3 class="mb-3 font-bold text-white text-2xl">
+                                    Take online courses by industry experts
+                                </h3>
+                                <p class="leading-snug tracking-wide text-white text-xl text-opacity-100">
+                                    Lessons are self-paced so you’ll never be
+                                    late for class or miss a deadline.
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* <!-- left timeline --> */}
+                        <div class="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
+                            <div class="order-1 w-5/12"></div>
+                            <div class="z-20 flex items-center order-1 bg-customVerticalTimeline shadow-xl w-8 h-8 rounded-full"></div>
+                            <div class="order-1 bg-red-400 rounded-lg shadow-xl w-5/12 px-6 py-4">
+                                <h3 class="mb-3 font-bold text-white text-xl">
+                                    Get a Course Certificate
+                                </h3>
+                                <p class="text-sm font-medium leading-snug tracking-wide text-white text-opacity-100">
+                                    Your answers are graded by experts, not
+                                    machines. Get an industry-recognized Course
+                                    Certificate to prove your skills.
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* <!-- right timeline --> */}
+                        <div class="mb-8 flex justify-between items-center w-full right-timeline">
+                            <div class="order-1 w-5/12"></div>
+                            <div class="z-20 flex items-center order-1 bg-customVerticalTimeline shadow-xl w-8 h-8 rounded-full"></div>
+                            <div class="order-1 bg-custom1 rounded-lg shadow-xl w-5/12 px-6 py-4">
+                                <h3 class="mb-3 font-bold text-white text-2xl">
+                                    Advance your career
+                                </h3>
+                                <p class="leading-snug tracking-wide text-white text-xl text-opacity-100">
+                                    Use your new skills in your existing job or
+                                    to get a new job in UX design. Get help from
+                                    our community.
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* <!-- left timeline --> */}
+                        <div class="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
+                            <div class="order-1 w-5/12"></div>
+                            <div class="z-20 flex items-center order-1 bg-customVerticalTimeline shadow-xl w-8 h-8 rounded-full"></div>
+                            <div class="order-1 bg-red-400 rounded-lg shadow-xl w-5/12 px-6 py-4">
+                                <h3 class="mb-3 font-bold text-white text-xl">
+                                    Lifetime Access
+                                </h3>
+                                <p class="text-sm font-medium leading-snug tracking-wide text-white text-opacity-100">
+                                    Kamu bisa mendapat akses materi selamanya.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="text-center my-10 text-2xl text-custom2 font-bold">
+                        Completed
+                    </div>
+                </div>
+            </div>
+            {/* Fifth Section */}
+            <div className="h-96 bg-white"></div>
+            
         </div>
     );
 }

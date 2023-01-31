@@ -13,7 +13,7 @@ function Nav() {
                     <div className="min-w-1/3">
                         <ul className="flex justify-around">
                             <li>
-                                <Link className="text-custom2">Home</Link>
+                                <Link className="text-custom2" to='/'>Home</Link>
                             </li>
                             <li>
                                 <Link className="text-custom2">Kelas</Link>
@@ -26,7 +26,7 @@ function Nav() {
                     <div className="">
                         <ul className="flex justify-center">
                             <li className="px-6 py-4 text-custom1">
-                                <Link>Sign In</Link>
+                                <Link to="/login">Sign In</Link>
                             </li>
                             <li className="bg-custom1 text-white font-semibold px-6 py-4">
                                 <Link>Sign Up</Link>
